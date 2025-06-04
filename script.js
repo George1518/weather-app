@@ -6,6 +6,8 @@ btn.addEventListener("click", ()=>
     let inputbox = document.getElementById('city')
     const apikey = "d4bd02af9d30ba7ac7febd378d11fc50";
             const img = document.getElementById('img');
+            const container = document.getElementById('container');
+            const outputcontainer  = document.getElementById('output-container');
      inputbox.style.outline = 'none'
     if(!city)
     {
@@ -13,6 +15,16 @@ btn.addEventListener("click", ()=>
         inputbox.style.color = "red"
         img.style.display ="block"
         document.getElementById('output').textContent = '';
+     
+        container.classList.remove( "bg-blue-200",'bg-cyan-100','bg-yellow-200','bg-orange-200','bg-red-200' )
+            outputcontainer.classList.remove( "bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100' )
+            inputbox.classList.remove("bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100')
+            btn.classList.remove("bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100')
+
+               container.classList.add("bg-gray-100")
+        outputcontainer.classList.add("bg-gray-300")
+        inputbox.classList.add("bg-gray-100")
+        btn.classList.add("bg-gray-100")
         
     }
     else
@@ -43,10 +55,61 @@ btn.addEventListener("click", ()=>
             <h2> Temperature: ${temp}°C</h2>
             <h2> Weather: ${condition}</h2> `
 
-            // if(temp < 10)
-            // {
-            //     document.getElementById("output-container").style.backgroundColor = "blue"
-            // }
+            container.classList.remove("bg-gray-100", "bg-blue-200",'bg-cyan-100','bg-yellow-200','bg-orange-200','bg-red-200' )
+            outputcontainer.classList.remove("bg-gray-300", "bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100' )
+            inputbox.classList.remove("bg-gray-300","bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100')
+            btn.classList.remove("bg-gray-300","bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100')
+
+            if(temp <= 10)
+            {
+                container.classList.add("bg-blue-200")
+                outputcontainer.classList.add('bg-blue-100')
+                inputbox.classList.add('bg-blue-100')
+                btn.classList.add('bg-blue-100')
+            
+    
+                
+            }
+            else if(temp <= 20)
+            {
+                container.classList.add("bg-cyan-100")
+                outputcontainer.classList.add('bg-cyan-100')
+                inputbox.classList.add('bg-cyan-100')
+                btn.classList.add('bg-cyan-100')
+            
+    
+                
+            }
+            else if(temp <= 30)
+            {
+                container.classList.add("bg-yellow-200")
+                outputcontainer.classList.add('bg-yellow-100')
+                inputbox.classList.add('bg-yellow-100')
+                btn.classList.add('bg-yellow-100')
+            
+    
+                
+            }
+            else if(temp <= 38)
+            {
+                container.classList.add("bg-orange-200")
+                outputcontainer.classList.add('bg-orange-100')
+                inputbox.classList.add('bg-orange-100')
+                btn.classList.add('bg-orange-100')
+            
+    
+                
+            }
+            else if(temp > 38)
+            {
+                container.classList.add("bg-red-200")
+                outputcontainer.classList.add('bg-red-100')
+                inputbox.classList.add('bg-red-100')
+                btn.classList.add('bg-red-100')
+            
+    
+                
+            }
 
 
 
