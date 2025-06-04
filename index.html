@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-     <script src="script.js"></script>
     <title>Weather App</title>
 
 </head>
 <body>
      <div id="container" class="md:w-lg h-auto my-15 mx-auto flex flex-col justify-around items-center rounded-2xl text-xl bg-gray-100 shadow-xl">
-        <div id="text-container" class="p-6 mt-10 mx-auto flex gap-4 items-center ">
+      <h1 class="p-4 text-3xl tracking-widest text-bold text-gray-800 underline">weatherify</h1>
+        <div id="text-container" class="mt-10 mx-auto flex gap-4 items-center ">
             <input type="text" id="city" class="bg-gray-300 text-xl px-3 py-1 outline-0 rounded-3xl shadow-xl " placeholder="Enter Your City..">
               <div id="btn" class="mx-auto px-2 p-1.5 bg-gray-300  rounded-full b hover:bg-gray-100 shadow-xl"> <img src="assets/search.png" alt="search" width="20px" height="20" class=""> </div>
         </div>
-         <div id="data-container" class="md:w-sm w-4/5 bg-gray-300 rounded-2xl flex flex-col mx-5 my-10 items-start p-6 gap-6 shadow-xl">
-           <p class="data" id="place">Place</p>
-           <p class="data" id="temperature">Temperature</p>
-           <p class="data" id="weather">Weather</p>
-            
-
-         </div>
+         <div id="output-container" class="md:w-sm w-4/5 h-3/5 bg-gray-300 rounded-2xl flex flex-col mx-5 my-10 items-center p-6 gap-6 shadow-xl justify-center">
+          <div id="output" class="flex flex-col justify-around w-full justify-center items-start gap-4 px-16"> </div>
+          <img src="assets/cloud.png" alt="weather-img" class="w-32 h-32" id="img">
+             </div>
 
 
      </div>
+       <script src="script.js"></script>
     
 </body>
 </html>
