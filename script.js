@@ -8,6 +8,7 @@ btn.addEventListener("click", ()=>
             const img = document.getElementById('img');
             const container = document.getElementById('container');
             const outputcontainer  = document.getElementById('output-container');
+            const info = document.getElementById('info');
      inputbox.style.outline = 'none'
     if(!city)
     {
@@ -15,6 +16,7 @@ btn.addEventListener("click", ()=>
         inputbox.style.color = "red"
         img.style.display ="block"
         document.getElementById('output').textContent = '';
+        info.innerHTML = "<p> Enter your City !! </p>"
      
         container.classList.remove( "bg-blue-200",'bg-cyan-100','bg-yellow-200','bg-orange-200','bg-red-200' )
             outputcontainer.classList.remove( "bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100' )
@@ -29,7 +31,7 @@ btn.addEventListener("click", ()=>
     }
     else
     {
-       
+          info.innerHTML = ""
          inputbox.style.outline = 'none'
         inputbox.style.color = "black"
         img.style.display ="none"
@@ -78,9 +80,9 @@ btn.addEventListener("click", ()=>
 
             document.getElementById('output').innerHTML =
 
-         `   <h2> City: ${name} 📌 </h2>
+         `   <h2> City:${name}</h2>
             <h2> Temperature: ${temp}°C</h2>
-            <h2> Weather: ${condition} ${icon}</h2>`
+            <h2> Weather: ${condition}${icon}</h2>`
 
             container.classList.remove("bg-gray-100", "bg-blue-200",'bg-cyan-100','bg-yellow-200','bg-orange-200','bg-red-200' )
             outputcontainer.classList.remove("bg-gray-300", "bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100' )
