@@ -29,7 +29,7 @@ btn.addEventListener("click", ()=>
     }
     else
     {
-        //  document.getElementById("output-container").style.backgroundColor = "rgb(224,224,224)"
+       
          inputbox.style.outline = 'none'
         inputbox.style.color = "black"
         img.style.display ="none"
@@ -48,12 +48,39 @@ btn.addEventListener("click", ()=>
             const name = data.name;
             const temp = data.main.temp;
             const condition = data.weather[0].main;
+            let icon = ""
+            switch (condition)
+            {
+                case "Clear":
+                icon = "☀️";
+                break;
+                case "Clouds":
+                icon = "☁️";
+                break;
+                case "Thunderstorm":
+                icon = "⛈️";
+                 break;
+                case "Rain":
+                icon = "🌧️";
+                 break;
+                case "Snow":
+                icon = "❄️";
+                break;
+                case "Mist":
+                case "Fog":
+                case "Haze":
+                      icon = "🌫️";
+                     break;
+                default:
+                icon = "🌈";
+            }
+
 
             document.getElementById('output').innerHTML =
 
-         `   <h2> City: ${name} </h2>
+         `   <h2> City: ${name} 📌 </h2>
             <h2> Temperature: ${temp}°C</h2>
-            <h2> Weather: ${condition}</h2> `
+            <h2> Weather: ${condition} ${icon}</h2>`
 
             container.classList.remove("bg-gray-100", "bg-blue-200",'bg-cyan-100','bg-yellow-200','bg-orange-200','bg-red-200' )
             outputcontainer.classList.remove("bg-gray-300", "bg-blue-100",'bg-cyan-100','bg-yellow-100','bg-orange-100','bg-red-100' )
