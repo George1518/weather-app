@@ -12,7 +12,10 @@ btn.addEventListener("click", ()=>
      inputbox.style.outline = 'none'
     if(!city)
     {
-        inputbox.style.outline = '2px solid red'
+       
+        // new
+      inputbox.style.boxShadow = '2px 2px 5px red'
+      btn.style.boxShadow = '1px 1px 5px red'
         inputbox.style.color = "red"
         img.style.display ="block"
         document.getElementById('output').textContent = '';
@@ -31,7 +34,11 @@ btn.addEventListener("click", ()=>
     }
     else
     {
+          img.style.display ="none"
           info.innerHTML = ""
+        btn.style.boxShadow = ""
+        inputbox.style.boxShadow = ""
+            outputcontainer.style.boxShadow = ''
          inputbox.style.outline = 'none'
         inputbox.style.color = "black"
         img.style.display ="none"
