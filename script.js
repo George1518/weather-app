@@ -10,9 +10,11 @@ btn.addEventListener("click", () => {
   const info = document.getElementById("info");
   inputbox.style.outline = "none";
   if (!city) {
-    // new
-    inputbox.style.boxShadow = "2px 2px 5px red";
-    btn.style.boxShadow = "1px 1px 5px red";
+    // // new
+    // inputbox.style.boxShadow = "2px 2px 5px red";
+        inputbox.classList.add("shadow-sm", "shadow-red-400");
+        btn.classList.add("shadow-sm", "shadow-red-400");
+    // btn.style.boxShadow = "1px 1px 5px red";
     inputbox.style.color = "red";
     img.style.display = "block";
     document.getElementById("output").textContent = "";
@@ -53,13 +55,15 @@ btn.addEventListener("click", () => {
     btn.classList.add("bg-gray-100");
   } else {
     img.style.display = "none";
+     inputbox.classList.remove("shadow-sm", "shadow-red-400");
     info.innerHTML = "";
     btn.style.boxShadow = "";
     inputbox.style.boxShadow = "";
     outputcontainer.style.boxShadow = "";
     inputbox.style.outline = "none";
     inputbox.style.color = "black";
-    img.style.display = "none";
+     btn.classList.remove("shadow-sm", "shadow-red-400");
+    // img.style.display = "none";
 
     document.getElementById("output").textContent = "";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
